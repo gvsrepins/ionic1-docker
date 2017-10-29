@@ -1,13 +1,13 @@
 FROM     ubuntu:16.04
-LABEL maintainer="bitard [dot] michael [at] gmail [dot] com"
+LABEL maintainer="mLearn"
 
 ENV DEBIAN_FRONTEND=noninteractive \
     ANDROID_HOME=/opt/android-sdk-linux \
-    NODE_VERSION=8.8.1 \
-    NPM_VERSION=5.5.1 \
-    IONIC_VERSION=3.15.2 \
-    CORDOVA_VERSION=7.1.0 \
-    GRADLE_VERSION=4.2.1
+    NODE_VERSION=6.11.5 \
+    NPM_VERSION=3.10.10 \
+    IONIC_VERSION=1.7.16 \
+    CORDOVA_VERSION=6.5.0 \
+    GRADLE_VERSION=1.12
 
 # Install basics
 RUN apt-get update &&  \
