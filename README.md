@@ -3,25 +3,25 @@
 ## Usage
 
 ```
-docker run -ti --rm -p 8100:8100 -p 35729:35729 agileek/ionic-framework
+docker run -ti --rm -p 8100:8100 -p 35729:35729 mlearn/ionic-framework
 ```
 If you have your own ionic sources, you can launch it with:
 
 ```
-docker run -ti --rm -p 8100:8100 -p 35729:35729 -v /path/to/your/ionic-project/:/myApp:rw agileek/ionic-framework:1.4.5
+docker run -ti --rm -p 8100:8100 -p 35729:35729 -v /path/to/your/ionic-project/:/app:rw agileek/ionic-framework
 ```
 
 ### Automation
 With this alias:
 
 ```
-alias ionic="docker run -ti --rm -p 8100:8100 -p 35729:35729 --privileged -v /dev/bus/usb:/dev/bus/usb -v ~/.gradle:/root/.gradle -v \$PWD:/myApp:rw agileek/ionic-framework:1.4.5 ionic"
+alias ionic="docker run -ti --rm -p 8100:8100 -p 35729:35729 --privileged -v /dev/bus/usb:/dev/bus/usb -v ~/.gradle:/root/.gradle -v \$PWD:/app:rw agileek/ionic-framework ionic"
 ```
 
 > Due to a bug in ionic, if you want to use ionic serve, you have to use --net host option :
 
 ```
-alias ionic="docker run -ti --rm --net host --privileged -v /dev/bus/usb:/dev/bus/usb -v ~/.gradle:/root/.gradle -v \$PWD:/myApp:rw agileek/ionic-framework:1.4.5 ionic"
+alias ionic="docker run -ti --rm --net host --privileged -v /dev/bus/usb:/dev/bus/usb -v ~/.gradle:/root/.gradle -v \$PWD:/app:rw agileek/ionic-framework ionic"
 ```
 
 > Know you need gradle for android, I suggest to mount ~/.gradle into /root/.gradle to avoid downloading the whole planet again and again
